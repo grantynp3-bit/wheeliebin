@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.activity.result.contract.ActivityResultContracts
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             prefs.uprn = selectedUprn
             BinCheckWorker.schedule(this)
             binding.statusText.text = "Saved. Reminders are on — checking a few times a day."
+            showReminderConfirmation()
             checkNow()
         }
 
@@ -84,6 +86,18 @@ class MainActivity : AppCompatActivity() {
                 requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
+    }
+
+    private fun showReminderConfirmation() {
+        AlertDialog.Builder(this)
+            .setTitle("Reminders are set")
+            .setMessage(
+                "We'll check Newport City Council for your bin collection dates every 6 " +
+                    "hours, and you'll get a notification the evening before any bin is due " +
+                    "out — so you'll never miss a collection."
+            )
+            .setPositiveButton("Got it", null)
+            .show()
     }
 
     private fun findAddress() {
