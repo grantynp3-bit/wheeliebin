@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             prefs.uprn = uprn
             BinCheckWorker.schedule(this)
             binding.statusText.text = "Saved. Reminders are on — checking a few times a day."
+            checkNow()
         }
 
         binding.checkNowButton.setOnClickListener {
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         if (prefs.uprn.isNotBlank()) {
             BinCheckWorker.schedule(this)
+            checkNow()
         }
     }
 
