@@ -21,33 +21,59 @@
             android:layout_marginBottom="16dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/uprnLayout"
+            android:id="@+id/postcodeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/uprn_label">
+            android:hint="@string/postcode_label">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/uprnInput"
+                android:id="@+id/postcodeInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="@string/uprn_hint" />
+                android:inputType="textCapCharacters"
+                android:hint="@string/postcode_hint" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/findUprnHint"
+            android:id="@+id/postcodeHintText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/find_uprn_hint"
+            android:text="@string/postcode_hint_text"
             android:textSize="12sp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="16dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/findAddressButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/find_address_button" />
+
+        <TextView
+            android:id="@+id/addressLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/address_label"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/addressSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/save_button" />
 
         <com.google.android.material.button.MaterialButton
