@@ -32,7 +32,9 @@ object NewportBinApi {
     private const val KEY_HEX = "F57E76482EE3DC3336495DEDEEF3962671B054FE353E815145E29C5689F72FEC"
     private const val IV_HEX = "2CBF4FC35C69B82362D393A4F0B9971A"
 
-    private val isoDate: DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE
+    // Newport's iTouchVision API returns dates as "dd-MM-yyyy" (e.g. "25-08-2026"),
+    // not ISO 8601 — using the wrong formatter here silently drops every collection.
+    private val apiDateFormat: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
 
     class BinApiException(message: String, cause: Throwable? = null) : IOException(message, cause)
 
@@ -90,7 +92,7 @@ object NewportBinApi {
             val item = array.optJSONObject(i) ?: continue
             val type = item.optString("binType").ifBlank { "Bin" }
             val rawDate = item.optString("collectionDay")
-            val date = runCatching { LocalDate.parse(rawDate, isoDate) }.getOrNull() ?: continue
+            val date = runCatching { LocalDate.parse(rawDate, apiDateFormat) }.getOrNull() ?: continue
             results.add(BinCollection(type, date))
         }
         return results.sortedBy { it.date }
