@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wheelie Bin Reminder</string>
+    <string name="uprn_label">Your UPRN</string>
+    <string name="uprn_hint">e.g. 100100210001</string>
+    <string name="save_button">Save and start reminders</string>
+    <string name="check_now_button">Check now</string>
+    <string name="status_not_configured">Enter your UPRN above, then tap Save.</string>
+    <string name="find_uprn_hint">Don\'t know your UPRN? Find it for free at findmyaddress.uk, then paste the 12-digit number here.</string>
+</resources>
