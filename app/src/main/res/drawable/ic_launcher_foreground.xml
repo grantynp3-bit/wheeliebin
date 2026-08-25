@@ -18,6 +18,6 @@
         android:pathData="M34,44 L74,44 L70,88 L38,88 Z" />
     <!-- body cutout to create outline look -->
     <path
-        android:fillColor="#2E7D32"
+        android:fillColor="#F57C00"
         android:pathData="M39,50 L69,50 L66,82 L42,82 Z" />
 </vector>
