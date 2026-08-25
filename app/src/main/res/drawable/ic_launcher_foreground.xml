@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- handle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,20 L62,20 L62,28 L46,28 Z" />
+    <!-- lid -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,30 L78,30 L78,40 L30,40 Z" />
+    <!-- body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,44 L74,44 L70,88 L38,88 Z" />
+    <!-- body cutout to create outline look -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M39,50 L69,50 L66,82 L42,82 Z" />
+</vector>
